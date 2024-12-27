@@ -20,7 +20,7 @@ This classic memory-based game challenges your focus, attention, and pattern-rec
 ## How to Play?
 
 1. Launch the game in your browser.
-2. Watch the sequence of lights and sounds carefully.
+2. Watch the sequence of lights carefully.
 3. Repeat the sequence by clicking the corresponding buttons.
 4. The sequence gets longer with each round. Test your memory and keep going!
 
