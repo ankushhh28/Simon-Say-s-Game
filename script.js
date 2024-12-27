@@ -73,7 +73,7 @@ function checkAns(idx) {
     } else {
         //** If the user's input is incorrect, end the game **
         if(started==true){
-        gamelevel.innerHTML = `Game Over!  Your Score is ${level} <br> Press any key to Restart`;
+        gamelevel.innerHTML = `Game Over!  Your Score is ${level} <br><br> Press any key to Restart`;
         setTimeout(reset, 2000); // Reset the game after 2 seconds
 
         }
