@@ -36,7 +36,7 @@ function levelUp() {
 //** Flash a button for the game's sequence **
 function gameflash(btn) {
     btn.classList.add("opacity-15");
-    setTimeout(() => btn.classList.remove("opacity-15"), 300);
+    setTimeout(() => btn.classList.remove("opacity-15"), 300)
 }
 
 
