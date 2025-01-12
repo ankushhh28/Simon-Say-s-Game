@@ -7,14 +7,18 @@ let level = 0; // Tracks the current game level
 let gamelevel = document.querySelector('#level-status'); // Reference to the level/status display element
 
 // **Event Listeners**
-// Start the game when a key is pressed
-document.addEventListener("keypress", function () {
-    if (started===false) {
+// Start the game when a key is pressed or when the screen is clicked
+document.addEventListener("keypress", startGame);
+document.addEventListener("click", startGame);
+
+// Start the game
+function startGame() {
+    if (started === false) {
         console.log("Game started");
         started = true;
         levelUp(); // Start the first level
     }
-});
+}
 
 //** Handle the game level-up process **
 function levelUp() {
@@ -36,9 +40,8 @@ function levelUp() {
 //** Flash a button for the game's sequence **
 function gameflash(btn) {
     btn.classList.add("opacity-15");
-    setTimeout(() => btn.classList.remove("opacity-15"), 300)
+    setTimeout(() => btn.classList.remove("opacity-15"), 300);
 }
-
 
 //** Add click event listeners to all buttons **
 let allBtns = document.querySelectorAll('.btns');
@@ -62,7 +65,6 @@ function userflash(btn) {
     setTimeout(() => btn.classList.remove("opacity-5"), 300);
 }
 
-
 //** Check if the user's input matches the game's sequence **
 function checkAns(idx) {
     if (userSeq[idx] === gameSeq[idx]) {
@@ -72,10 +74,9 @@ function checkAns(idx) {
         }
     } else {
         //** If the user's input is incorrect, end the game **
-        if(started==true){
-        gamelevel.innerHTML = `Game Over!  Your Score is ${level} <br><br> Press any key to Restart`;
-        setTimeout(reset, 2000); // Reset the game after 2 seconds
-
+        if(started === true){
+            gamelevel.innerHTML = `Game Over!  Your Score is ${level} <br><br> Press any key or tap to Restart`;
+            setTimeout(reset, 2000); // Reset the game after 2 seconds
         }
     }
 }
@@ -87,5 +88,3 @@ function reset() {
     userSeq = []; // Clear the user's sequence
     level = 0; // Reset the level to 0
 }
-
-
